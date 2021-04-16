@@ -5,13 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/action_home"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home"
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/action_profile"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile"
         app:showAsAction="ifRoom"/>
