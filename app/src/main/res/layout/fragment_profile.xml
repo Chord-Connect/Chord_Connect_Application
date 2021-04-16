@@ -6,23 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/ivUserPicture"
-        android:layout_width="157dp"
-        android:layout_height="148dp"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/circle_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
     <TextView
         android:id="@+id/userProfileName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/fjalla_one"
         android:text="Kavan Adeshara"
         android:textAlignment="center"
@@ -31,69 +19,34 @@
         android:textSize="30sp"
         android:typeface="sans"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivUserPicture"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:background="#DE6A50"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/screen_background_light_transparent" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="108dp"
-        android:layout_height="92dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#AF0B0B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
-
-    <Button
-        android:id="@+id/logoutButton"
-        android:layout_width="75dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/circle_shape"
-        android:fontFamily="sans-serif"
-        android:text="Log Out"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ivUserImage" />
 
     <TextView
         android:id="@+id/userAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/fjalla_one"
         android:text="250 Plaza Blvd, Morrisville, PA 19067"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivUserPicture" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfileName" />
 
     <TextView
         android:id="@+id/userPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/fjalla_one"
         android:text="888-888-8888"
         android:textColor="#DE6A50"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userAddress" />
 
@@ -101,15 +54,39 @@
         android:id="@+id/userEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-condensed"
         android:text="something@gmail.com"
         android:textColor="#DE6A50"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/userPhone"
         app:layout_constraintTop_toBottomOf="@+id/userAddress" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivUserImage"
+        android:layout_width="171dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        app:civ_border_color="#DE6A50"
+        app:civ_border_width="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_logout_24"
+        app:backgroundTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivUserImage"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="51dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

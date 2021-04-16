@@ -1,6 +1,9 @@
 package com.example.chordconnectapp.fragments;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -8,16 +11,22 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.chordconnectapp.LoginPage;
 import com.example.chordconnectapp.MainActivity;
 import com.example.chordconnectapp.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
 
@@ -25,19 +34,18 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ProfileFragment extends Fragment {
     TextView userProfileName;
     TextView userAddress;
     TextView userPhone;
     TextView userEmail;
-    Button logoutButton;
+    ImageView userImage;
+    FloatingActionButton logoutButton;
 
     ParseUser currentUser;
+
+    List<ParseUser> nearMusicians;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -60,6 +68,8 @@ public class ProfileFragment extends Fragment {
         userPhone = view.findViewById(R.id.userPhone);
         userEmail = view.findViewById(R.id.userEmail);
         logoutButton = view.findViewById(R.id.logoutButton);
+        userImage = view.findViewById(R.id.ivUserImage);
+
 
         // get current user
         currentUser = ParseUser.getCurrentUser();
@@ -73,10 +83,21 @@ public class ProfileFragment extends Fragment {
             e.printStackTrace();
         }
 
+        ParseFile profileImage = currentUser.getParseFile("profile_picture");
+        Log.d("ProfileFragement", String.valueOf(profileImage));
+
         userProfileName.setText(currentUser.getUsername());
         userEmail.setText(currentUser.getEmail());
         userAddress.setText(address);
         userPhone.setText(phone);
+
+        try{
+            Glide.with(this).load(profileImage.getUrl()).into(userImage);
+        }
+        catch (Exception e){
+            e.getStackTrace();
+        }
+
 
 
         // implement log out functionality

@@ -42,7 +42,7 @@
         android:layout_width="147dp"
         android:layout_height="46dp"
         android:layout_marginTop="48dp"
-        android:background="#D7F44336"
+        android:background="#DE6A50"
         android:fontFamily="sans-serif"
         android:text="Log In"
         android:textColor="@color/white"
