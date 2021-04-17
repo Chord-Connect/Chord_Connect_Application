@@ -3,29 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/ivMusicianImage"
-        android:layout_width="108dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/circle_shape"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+    android:layout_height="wrap_content"
+    android:background="#7A5C5B5B">
 
     <TextView
         android:id="@+id/tvMusicianUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/fjalla_one"
         android:text="Kavan Adeshara"
         android:textColor="#DE6A50"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/ivMusicianImage"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,12 +39,25 @@
         android:id="@+id/tvMusicianContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/fjalla_one"
         android:text="(267) 274-3528"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toEndOf="@+id/ivMusicianImage"
         app:layout_constraintTop_toBottomOf="@+id/tvMusicianUsername" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivMusicianImage"
+        android:layout_width="92dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:civ_border_color="#DE6A50"
+        app:civ_border_width="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

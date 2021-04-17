@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.chordconnectapp.fragments.FeedFragment;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
@@ -81,6 +82,7 @@ public class FeedAdapter extends  RecyclerView.Adapter<FeedAdapter.ViewHolder> {
                 String distance = String.valueOf(d) + " mi";
                 tvMusicianDistance.setText(distance);
                 Log.d("FeedAdapter", "Successfully binded");
+                Glide.with(context).load(musician.getParseFile("profile_picture").getUrl()).into(ivMusicianImage);
             }catch (Exception e){
                 Log.e("FeedAdapter", "Error in binding");
             }
