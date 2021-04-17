@@ -1,11 +1,11 @@
-package com.example.chordconnectapp;
+package com.example.chordconnectapp.adapters;
 
 import android.content.Context;
-import android.icu.number.Precision;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,8 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.chordconnectapp.fragments.FeedFragment;
-import com.parse.ParseGeoPoint;
+import com.example.chordconnectapp.R;
 import com.parse.ParseUser;
 
 import java.util.List;
@@ -61,6 +60,8 @@ public class FeedAdapter extends  RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         TextView tvMusicianUsername;
         TextView tvMusicianDistance;
         TextView tvMusicianContact;
+        Button btnPlay1;
+        Button btnPlay2;
 
         public ViewHolder(@NonNull View itemView) {
 
@@ -83,6 +84,7 @@ public class FeedAdapter extends  RecyclerView.Adapter<FeedAdapter.ViewHolder> {
                 tvMusicianDistance.setText(distance);
                 Log.d("FeedAdapter", "Successfully binded");
                 Glide.with(context).load(musician.getParseFile("profile_picture").getUrl()).into(ivMusicianImage);
+                if (tvMusicianUsername.getText().equals("Kavan Adeshara"));
             }catch (Exception e){
                 Log.e("FeedAdapter", "Error in binding");
             }

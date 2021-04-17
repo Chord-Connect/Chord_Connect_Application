@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.chordconnectapp.FeedAdapter;
+import com.example.chordconnectapp.adapters.FeedAdapter;
 import com.example.chordconnectapp.R;
 import com.parse.FindCallback;
 import com.parse.ParseException;

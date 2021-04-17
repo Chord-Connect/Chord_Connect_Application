@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.example.chordconnectapp.fragments.FeedFragment;
 import com.example.chordconnectapp.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseUser;
 
@@ -46,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
         final FragmentManager fragmentManager = getSupportFragmentManager();
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabUpload);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, UploadActivity.class));
+            }
+        });
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

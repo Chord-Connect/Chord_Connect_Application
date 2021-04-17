@@ -16,6 +16,14 @@
         android:layout_below="@id/ivMainActivityLogo"
         android:layout_marginTop="6dp" >
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="330dp"
+            android:layout_marginTop="520dp"
+            android:backgroundTint="#DE6A50"
+            android:src="@drawable/ic_baseline_add_24" />
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -24,11 +32,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#DE6A50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="0dp" />
+         />
 
     <ImageView
         android:id="@+id/ivMainActivityLogo"
