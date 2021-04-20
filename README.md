@@ -85,6 +85,8 @@ Chord Connect is a social android app that helps musicians connect with other mu
 
 ## Unit 8 Progress
 
+<img src='walkthrough8.gif' title='Video Walkthrough' width=500 alt='Video Walkthrough' />
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## YOUTUBE LINK OF VIDEO WALKTHROUGH
 
